@@ -7,6 +7,6 @@ public interface Filter {
 
     List<Flight> arrivalAfterDeparture(List<Flight> flights);
 
-    List<Flight> longFlight(List<Flight> flights);
+    List<Flight> littleWait(List<Flight> flights);
 
 }

@@ -8,9 +8,13 @@ import java.util.List;
 
 class FilterImp implements Filter {
 
+    /**
+     * Исключает вылеты до текущего момента времени.
+     *
+     * @return List<Flight>
+     */
     @Override
     public List<Flight> futureFlight(List<Flight> flights) {
-        System.out.println("futureFlight");
         List<Flight> result = new ArrayList<>();
         for (Flight flight : flights) {
             boolean check = true;
@@ -24,10 +28,13 @@ class FilterImp implements Filter {
         return result;
     }
 
+    /**
+     * Исключает сегменты с датой прилёта раньше даты вылета.
+     *
+     * @return List<Flight>
+     */
     @Override
     public List<Flight> arrivalAfterDeparture(List<Flight> flights) {
-        System.out.println("arrivalAfterDeparture");
-
         List<Flight> result = new ArrayList<>();
         for (Flight flight : flights) {
             boolean check = true;
@@ -41,10 +48,13 @@ class FilterImp implements Filter {
         return result;
     }
 
+    /**
+     * Исключает перелеты, где общее время, проведённое на земле, превышает два часа.
+     *
+     * @return List<Flight>
+     */
     @Override
-    public List<Flight> longFlight(List<Flight> flights) {
-        System.out.println("longFlight");
-
+    public List<Flight> littleWait(List<Flight> flights) {
         List<Flight> result = new ArrayList<>();
         for (Flight flight : flights) {
             boolean check = true;
